@@ -10,13 +10,6 @@ This repository is dedicated to exploring the internal workings of `va_list` and
 - Understand the underlying mechanism of `va_list` and its macros.
 - Observe how the structure changes with each argument access.
 - Highlight distinctions between floating-point and general arguments in variadic functions.
-- Provide a clear visualization of the internal processes.
-
-## Key Features
-
-- **Code for visualization**: Step-by-step exploration of how `va_list` interacts with variable arguments.
-- **Detailed comparisons**: Analyze how floating-point and general arguments are handled differently.
-- **Educational focus**: Ideal for those curious about low-level behavior in variadic functions.
 
 ## Resources
 
