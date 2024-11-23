@@ -1,5 +1,3 @@
-# Understanding `va_list`, `va_start`, and `va_arg`
-
 This repository is dedicated to exploring the internal workings of `va_list` and related macros in C (`va_start` and `va_arg`). Through this project, we visualize and analyze how these macros manage variable-length arguments and investigate key concepts such as:
 
 - The behavior of `va_list` struct elements during execution.
