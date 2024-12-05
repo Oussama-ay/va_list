@@ -30,7 +30,7 @@ void foo(int max, ...)
     printf("Before (va_start):\n");
     print(arg);
     va_start(arg, max);
-    printf("After (va_start):\n");
+    printf("\nAfter (va_start):\n");
     print(arg);
     for (int i = 0; i < max; i++)
     {
