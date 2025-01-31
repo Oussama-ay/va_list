@@ -15,30 +15,37 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-void print(va_list arg)
+#define BLUE    "\x1b[34m"
+#define GREEN   "\x1b[32m"
+#define YELLOW  "\x1b[33m"
+#define RESET   "\x1b[0m"
+
+void	print(va_list arg)
 {
-    printf("fp_offset :%d\n", arg->fp_offset);
-    printf("gp_offset :%d\n", arg->gp_offset);
-    printf("overflow_arg_area :%p\n", arg->overflow_arg_area);
-    printf("reg_save_area : %p\n", arg->reg_save_area);
+	printf("%sfp_offset: %d%s\n", BLUE, arg->fp_offset, RESET);
+	printf("%sgp_offset: %d%s\n", BLUE, arg->gp_offset, RESET);
+	printf("%soverflow_arg_area: %p%s\n", GREEN, arg->overflow_arg_area, RESET);
+	printf("%sreg_save_area: %p%s\n", GREEN, arg->reg_save_area, RESET);
 }
 
-void foo(int max, ...)
+void	foo(int max, ...)
 {
-    va_list arg;
+	va_list	arg;
 
-    printf("Before (va_start):\n");
-    print(arg);
-    va_start(arg, max);
-    printf("\nAfter (va_start):\n");
-    print(arg);
-    for (int i = 0; i < max; i++)
-    {
-        printf("----------------------------\n");
-        printf("num = %.1f\n", va_arg(arg, double));
-        print(arg);
-    }
-    va_end(arg);
+	printf("%s=== Before (va_start): ===%s\n", YELLOW, RESET);
+	print(arg);
+	
+	va_start(arg, max);
+	printf("\n%s=== After (va_start): ===%s\n", YELLOW, RESET);
+	print(arg);
+	
+	for (int i = 0; i < max; i++)
+	{
+		printf("\n%s=== Processing arg %d ===%s\n", YELLOW, i + 1, RESET);
+		printf("Value = %.1f\n", va_arg(arg, double));
+		print(arg);
+	}
+	va_end(arg);
 }
 
 int main()
