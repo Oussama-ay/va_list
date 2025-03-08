@@ -58,7 +58,7 @@ void	foo(int max, ...)
 	
 		if (i == 4)
 		{
-			printf(RED"\nIMPORTANT: Now after 5 arguments, we will switch to the stack!\n"RESET);
+			printf(RED"\nIMPORTANT: Now after 6 arguments, we will switch to the stack!\n"RESET);
 			printf(RED"On most x86_64 systems, the first 6 integer arguments use registers,\nand any additional arguments will be passed on the stack via overflow_arg_area.%s\n", RESET);
 			printf(RED"You'll notice that gp_offset will stop changing after this point\nand overflow_arg_area pointer will start to increment instead.%s\n", RESET);
 			printf(RED"Press enter to continue\n"RESET);
